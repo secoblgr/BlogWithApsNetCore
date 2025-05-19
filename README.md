@@ -1,5 +1,6 @@
 C#,AspNetCore and SQL used for backend, fronted css and bootstrap.  <br>
 CRUD and admin panel services wroted.
 
-![Ekran Görüntüsü](/wwwroot/img/blog.png)
+
+<img src="wwwroot/img/blog.png" alt="Ekran Görüntüsü" width="400" />
 
