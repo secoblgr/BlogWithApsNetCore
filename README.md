@@ -2,5 +2,5 @@ C#,AspNetCore and SQL used for backend, fronted css and bootstrap.  <br>
 CRUD and admin panel services wroted.
 
 
-<img src="/img/blog.png" alt="Ekran Görüntüsü" width="400" />
+You can visit the img folder to access project details.
 
