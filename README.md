@@ -1,4 +1,4 @@
 C#,AspNetCore and SQL used for backend, fronted css and bootstrap.  <br>
 CRUD and admin panel services wroted.
 
-![Ekran Görüntüsü](img/blog.png)
+![Ekran Görüntüsü](/img/blog.png)
