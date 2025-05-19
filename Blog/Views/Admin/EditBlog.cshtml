@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "/Views/Shared/_AdminLayout.cshtml";
+}
+@model Blog 
+
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Edit Blog</h1>
+    <a href="/admin/blogs" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+        <i class="fas fa-arrow-left fa-sm text-white-50 mr-2"></i> All Blogs
+    </a>
+</div>
+
+<form action="/Admin/Update" method="post" id="update">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <label for="blogname">Title</label>
+    <div class="form-group">
+        <input type="text" class="form-control form-control-user "
+               id="blogname" aria-describedby="blogname"
+               placeholder="Title" value="@Model.Name" required name="name">
+    </div>
+    <label for="blogimageurl">Url</label>
+
+    <div class="form-group">
+        <input type="text" class="form-control form-control-user"
+               id="blogimageurl" aria-describedby="blogimageurl"
+               placeholder="Image Url"
+               value="@Model.ImageUrl" required name="imageUrl">
+    </div>
+    <label for="blogtags">Tags</label>
+
+    <div class="form-group">
+        <input type="text" class="form-control form-control-user"
+               id="blogtags" aria-describedby="blogtags"
+               placeholder="Tags"
+               value="@Model.Tags" required name="tags">
+    </div>
+    <label for="blogdescription">Message</label>
+
+    <div class="form-group">
+        <textarea type="text" rows="5" class="form-control form-control-user"
+                  id="blogdescription" placeholder="Message" required name="description"> @Model.Description</textarea>
+    </div>
+    <div class=" mt-3 mb-5 ">
+        <button class="btn btn-success btn-icon-split mr-2 " type="submit">
+            <span class="icon text-white-50">
+                <i class="fas fa-check"></i>
+            </span>
+            <span class="text">Update</span>
+        </button>
+
+        @if (@Model.Status == 1)
+        {
+            <a href="/Admin/ToggleStatus?id=@Model.Id" class="btn btn-warning btn-icon-split mr-2 ">
+                <span class="icon text-white-50">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </span>
+                <span class="text">Disable</span>
+            </a>
+        }
+        else
+        {
+            <a href="/Admin/ToggleStatus?id=@Model.Id" class="btn btn-primary btn-icon-split mr-2 ">
+                <span class="icon text-white-50">
+                    <i class="fas fa-flag"></i>
+                </span>
+                <span class="text">Active</span>
+            </a>
+        }
+        <a href="/Admin/Comments?blogId=@Model.Id" class="btn btn-info btn-icon-split ">
+            <span class="icon text-white-50">
+                <i class="fas fa-arrow-alt-circle-left"></i>
+            </span>
+            <span class="text">Go Comment</span>
+        </a>
+        <a href="/Admin/Delete?id=@Model.Id" class="btn btn-danger btn-icon-split ">
+            <span class="icon text-white-50">
+                <i class="fas fa-trash"></i>
+            </span>
+            <span class="text">Delete</span>
+        </a>
+    </div>
+</form>
